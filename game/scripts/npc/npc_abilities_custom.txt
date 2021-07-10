@@ -179,12 +179,13 @@
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"ability/hero_ogre_inspiration"
-		"LevelsBetweenUpgrades" 		"1"
 		"AbilityTextureName"			"seasonal_festive_firework"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"100 150 200 250 300"
 		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_4"
 		"AbilitySpecial"
 		{
 			"01"
@@ -210,12 +211,13 @@
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"ability/hero_ogre_healing_liquid"
 		"RequiredLevel"          		"2"
-		"LevelsBetweenUpgrades" 		"1"
 		"AbilityTextureName"			"brewmaster_drunken_haze"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 		"AbilityCooldown"				"4.5"
 		"AbilityManaCost"				"100 150 200 250 300"
 		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCastAnimation" 			"ACT_DOTA_CAST_ABILITY_2"
 		"AbilitySpecial"
 		{
 			"01"
@@ -236,7 +238,53 @@
 		}
 	}
 
-	"hero_ogre_illusion_party"
+	"hero_ogre_dancing_fight"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ability/hero_ogre_dancing_fight"
+		"RequiredLevel"          		"2"
+		"AbilityTextureName"			"brewmaster_drunken_brawler"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"AbilityUnitTargetFlags"		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityCooldown"				"5"
+		"AbilityManaCost"				"50 100 150 200 250"
+		"AbilityCastRange"				"600"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCastAnimation" 			"ACT_DOTA_TELEPORT"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_chance"		"20"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"crit_damage"		"200 225 250 275 300"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"crit_damage_desc"		"2.00 2.25 2.50 2.75 3.00"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"evasion"			"10 12 14 16 18"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"5 6 7 8 9"
+			}
+		}
+	}
+
+	"hero_ogre_illusion_party" // nao gostei... nao usei
 	{
 		"BaseClass"						"ability_lua"
 		"ScriptFile"					"ability/hero_ogre_illusion_party"

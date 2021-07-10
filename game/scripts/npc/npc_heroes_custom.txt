@@ -97,7 +97,7 @@
         "AttackRange"       "175"
         "Ability1"      "hero_ogre_inspiration"
         "Ability2"      "hero_ogre_healing_liquid"
-        "Ability3"      "hero_ogre_illusion_party"
+        "Ability3"      "hero_ogre_dancing_fight"
         "Ability4"      ""
         "Ability5"      ""
         "Ability6"      ""
