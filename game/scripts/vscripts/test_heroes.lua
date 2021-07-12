@@ -4,7 +4,7 @@ local heroItems = {}
 local heroAbilities = {}
 
 local hero = 0
-hero = CreateHeroForPlayer("npc_dota_hero_troll_warlord", hPlayer)
+hero = CreateHeroForPlayer("npc_dota_hero_omniknight", hPlayer)
 HEROES["0"] = hero
 heroAbilities["0"] = {}
 
@@ -12,7 +12,7 @@ hero = CreateHeroForPlayer("npc_dota_hero_windrunner", hPlayer)
 HEROES["1"] = hero
 heroAbilities["1"] = {}
 
-hero = CreateHeroForPlayer("npc_dota_hero_ogre_magi", hPlayer)
+hero = CreateHeroForPlayer("npc_dota_hero_brewmaster", hPlayer)
 HEROES["2"] = hero
 heroAbilities["2"] = {}
 

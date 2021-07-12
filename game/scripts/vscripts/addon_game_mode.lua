@@ -142,5 +142,5 @@ function GameMode:InitGame()
 	--RoundController:Init()
 	-- test
 	local spawnerVector = Entities:FindByName(nil, "spawner_center"):GetAbsOrigin()
-    CreateUnitByName("npc_megacreep_melee", spawnerVector, true, nil, nil, DOTA_TEAM_BADGUYS)
+    CreateUnitByName("npc_megacreep_ranged", spawnerVector, true, nil, nil, DOTA_TEAM_BADGUYS)
 end

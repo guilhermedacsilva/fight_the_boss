@@ -8,7 +8,7 @@ function npc_megacreep_melee_jump:OnSpellStart()
 
 	self:GetCaster():StartGestureWithPlaybackRate( ACT_DOTA_RELAX_START, 0.35 )
 	AICore:CreateDangerCircle(self:GetCaster():GetOrigin(), radius, cast_time)
-	self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_npc_stun_casting", { duration = cast_time } )
+	self:GetCaster():AddNewModifier( self:GetCaster(), self, "modifier_npc_immune_casting", { duration = cast_time } )
 
 	CreateModifierThinker( self:GetCaster(), self, "modifier_npc_megacreep_melee_jump", {}, self:GetCaster():GetOrigin(), self:GetCaster():GetTeamNumber(), false )
 end
