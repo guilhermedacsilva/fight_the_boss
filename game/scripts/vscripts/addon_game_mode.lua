@@ -25,8 +25,6 @@ function Activate()
 end
 
 function GameMode:InitRules()
-	print('GameMode:InitRules() inicio\n')
-
 	GameRules:SetHeroRespawnEnabled( ENABLE_HERO_RESPAWN )
 	GameRules:SetUseUniversalShopMode( UNIVERSAL_SHOP_MODE )
 	GameRules:SetSameHeroSelectionEnabled( ALLOW_SAME_HERO_SELECTION )
@@ -50,8 +48,6 @@ function GameMode:InitRules()
 
 	local timeTxt = string.gsub(string.gsub(GetSystemTime(), ':', ''), '^0+','')
 	math.randomseed(tonumber(timeTxt))
-
-	print('GameMode:InitRules() fim\n')
 
 	-- This is multiteam configuration stuff
 	--[[
@@ -139,8 +135,12 @@ function GameMode:InitGame()
 	LinkLuaModifier( "modifier_npc_stun_casting", "ability/modifier_npc_stun_casting.lua", LUA_MODIFIER_MOTION_NONE )
 	LinkLuaModifier( "modifier_hero_stunned", "ability/modifier_hero_stunned.lua", LUA_MODIFIER_MOTION_NONE )
 
-	--RoundController:Init()
-	-- test
-	local spawnerVector = Entities:FindByName(nil, "spawner_center"):GetAbsOrigin()
-    CreateUnitByName("npc_megacreep_ranged", spawnerVector, true, nil, nil, DOTA_TEAM_BADGUYS)
+	GameRules:SetTimeOfDay(0.26) -- day: 0.26 | night: 0.76
+
+	if TEST_HEROES then
+		local spawnerVector = Entities:FindByName(nil, "spawner_center"):GetAbsOrigin()
+		local boss = CreateUnitByName("npc_boss_luna", spawnerVector, true, nil, nil, DOTA_TEAM_BADGUYS)
+	else
+		RoundController:Init()
+	end
 end

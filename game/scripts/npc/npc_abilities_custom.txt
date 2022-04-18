@@ -514,12 +514,105 @@
 			"01"
 			{
 				"var_type"			"FIELD_INTEGER"
-				"damage"		"10"
+				"damage"		"5"
 			}
 			"02"
 			{
 				"var_type"			"FIELD_FLOAT"
+				"radius"		"250"
+			}
+		}
+	}
+
+	"npc_boss_luna_passive_beam"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ability/npc_boss_luna_passive_beam"
+		"AbilityTextureName"			"luna_lucent_beam_alt"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"do_nothing_time"		"1"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"follow_time"		"1.3"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"pre_beam_time"		"1.0"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"beam_damage"		"300"
+			}
+			"05"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"beam_damage_night"		"600"
+			}
+			"06"
+			{
+				"var_type"			"FIELD_FLOAT"
 				"radius"		"200"
+			}
+		}
+	}
+
+	"npc_boss_luna_glaive"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ability/npc_boss_luna_glaive"
+		"AbilityTextureName"			"luna/ti9_immortal_weapon/luna_moon_glaive_immortal"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"	    	"35"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage_night"	   	"70"
+			}
+		}
+	}
+
+	"npc_boss_luna_night_blessing"
+	{
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"ability/npc_boss_luna_night_blessing"
+		"AbilityTextureName"			"luna_eclipse"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"damage"	    	"500"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"radius"		   	"400"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"cast_time"		   	"2.5"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"wait_time"		   	"4"
 			}
 		}
 	}

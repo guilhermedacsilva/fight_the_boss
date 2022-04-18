@@ -13,6 +13,25 @@ function AICore:CreateDangerCircle(position, radius, duration)
 	ParticleManager:ReleaseParticleIndex( pIdx )
 end
 
+function AICore:CreateDangerCircleFollow(unit, radius, duration)
+  local pIdx = ParticleManager:CreateParticle("particles/danger_circle_fixed.vpcf", PATTACH_ABSORIGIN_FOLLOW, unit)
+  ParticleManager:SetParticleControl( pIdx, 1, Vector( 255, 0, 0 ) ) -- vec color
+  ParticleManager:SetParticleControl( pIdx, 2, Vector( 150, 0, 0 ) ) -- alpha
+  ParticleManager:SetParticleControl( pIdx, 3, Vector( radius, 0, 0 ) ) -- radius
+  ParticleManager:SetParticleControl( pIdx, 4, Vector( duration, 0, 0 ) ) -- duration
+	ParticleManager:ReleaseParticleIndex( pIdx )
+end
+
+function AICore:CreateDangerCircleInstant(position, radius, duration)
+  local pIdx = ParticleManager:CreateParticle("particles/danger_circle_instant.vpcf", PATTACH_WORLDORIGIN, nil)
+  ParticleManager:SetParticleControl( pIdx, 0, position ) -- vec pos
+  ParticleManager:SetParticleControl( pIdx, 1, Vector( 255, 0, 0 ) ) -- vec color
+  ParticleManager:SetParticleControl( pIdx, 2, Vector( 150, 0, 0 ) ) -- alpha
+  ParticleManager:SetParticleControl( pIdx, 3, Vector( radius, 0, 0 ) ) -- radius
+  ParticleManager:SetParticleControl( pIdx, 4, Vector( duration, 0, 0 ) ) -- duration
+	ParticleManager:ReleaseParticleIndex( pIdx )
+end
+
 -- COOLDOWN --------------------------------------------------
 
 function AICore:ResetCooldownTable()

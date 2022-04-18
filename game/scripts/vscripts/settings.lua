@@ -1,4 +1,4 @@
-TEST_HEROES = true
+TEST_HEROES = false
 
 -- MY GLOBALS
 HEROES = {}
@@ -8,7 +8,7 @@ for i=2,20 do
   GOLD_TABLE[i] = GOLD_TABLE[i-1] * 2
 end
 
-INITIAL_ROUND = 2
+INITIAL_ROUND = 1
 STARTING_GOLD = 0
 
 if TEST_HEROES then

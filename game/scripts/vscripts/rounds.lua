@@ -18,6 +18,18 @@ roundData =
         units = {
             {qnt = 1, name = "npc_megacreep_melee"}
         }
+    },
+    {
+        title ="Wave 4",
+        units = {
+            {qnt = 1, name = "npc_megacreep_ranged"}
+        }
+    },
+    {
+        title ="Wave 5",
+        units = {
+            {qnt = 1, name = "npc_boss_luna"}
+        }
     }
 }
 

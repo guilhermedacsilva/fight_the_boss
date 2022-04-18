@@ -6,20 +6,20 @@ local heroAbilities = {}
 local hero = 0
 hero = CreateHeroForPlayer("npc_dota_hero_omniknight", hPlayer)
 HEROES["0"] = hero
-heroAbilities["0"] = {}
+heroAbilities["0"] = {0,2,0,2}
 
 hero = CreateHeroForPlayer("npc_dota_hero_windrunner", hPlayer)
 HEROES["1"] = hero
-heroAbilities["1"] = {}
+heroAbilities["1"] = {0,1,0,1}
 
 hero = CreateHeroForPlayer("npc_dota_hero_brewmaster", hPlayer)
 HEROES["2"] = hero
-heroAbilities["2"] = {}
+heroAbilities["2"] = {0,1,0,1}
 
 for heroKey, hero in pairs(HEROES) do
     hero:SetControllableByPlayer(0, true)
     hero:AddItemByName("item_flask_datadriven")
-    hero:SetOrigin(Vector(300*(heroKey-1),500,0))
+    hero:SetOrigin(Vector(300*(heroKey-1),-500,0))
 
     -- LEVEL UP AND CHOOSE SKILLS
     hero:AddExperience(100 * (INITIAL_ROUND - 1), 0, false, false)

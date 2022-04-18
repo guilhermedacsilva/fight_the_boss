@@ -23,7 +23,9 @@ function modifier_hero_omniknight_retribution:OnTakeDamage(params)
 	local caster = self:GetCaster()
 	if IsServer() and params.unit == caster then
 		local return_damage = params.damage / 100.0 * self.retribution_return_damage
-		caster:SetHealth(caster:GetHealth() + return_damage)
+		if caster:GetHealth() > 0 then
+			caster:SetHealth(caster:GetHealth() + return_damage)
+		end
 		ApplyDamage( {
 			victim = params.attacker,
 			attacker = caster,
