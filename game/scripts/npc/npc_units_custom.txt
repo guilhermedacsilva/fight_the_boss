@@ -5,21 +5,22 @@
 	"npc_creep_1"
 	{
 		"BaseClass"						"npc_dota_creature"
-		"Model"							"models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee.vmdl"
+		"Model"							"models/creeps/neutral_creeps/n_creep_furbolg/n_creep_furbolg_disrupter.vmdl"
 		"SoundSet"						"Creep_Bad_Melee"
 		"ModelScale"					"1"
 
-		"Ability1"						""
+		"Ability1"						"npc_difficulty"
+		"Ability2"						"npc_creep1_fire"
 
 		"ArmorPhysical"					"0"
 		"MagicalResistance"				"0"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"				"25"
-		"AttackDamageMax"				"25"
-		"AttackRate"					"1.25"
+		"AttackDamageMin"				"10"
+		"AttackDamageMax"				"10"
+		"AttackRate"					"1.5"
 		"AttackAnimationPoint"			"0.5"
 		"AttackRange"					"150"
-		"StatusHealth"					"450"
+		"StatusHealth"					"100"
 		"StatusMana"					"0"
 		"RingRadius"					"60"
 		"HealthBarOffset"				"150"
@@ -33,7 +34,7 @@
 		"BountyGoldMin"					"0"
 		"BountyGoldMax"					"0"
 		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"					"330"
+		"MovementSpeed"					"260"
 		"MovementTurnRate"				"1.0"
 		"FollowRange"					"9999"
 		"TeamName"						"DOTA_TEAM_BADGUYS"
@@ -44,173 +45,30 @@
 		"VisionNighttimeRange"			"8000"
 	}
 
-	"npc_creep_2"
+	"npc_frost_shaman"
 	{
+		"vscripts"						"ai/npc_frost_shaman.lua"
 		"BaseClass"						"npc_dota_creature"
-		"Model"							"models/creeps/lane_creeps/creep_bad_ranged/lane_dire_ranged.vmdl"
-		"SoundSet"						"Creep_Bad_Melee"
-		"ModelScale"					"1"
-
-		"Ability1"						""
-
-		"ArmorPhysical"					"0"
-		"MagicalResistance"				"0"
-		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"				"25"
-		"AttackDamageMax"				"25"
-		"AttackRate"					"1.25"
-		"AttackAnimationPoint"			"0.5"
-		"AttackRange"					"600"
-		"ProjectileModel"				"particles/base_attacks/ranged_badguy.vpcf"
-		"ProjectileSpeed"				"900"
-		"StatusHealth"					"650"
-		"StatusMana"					"0"
-		"RingRadius"					"60"
-		"HealthBarOffset"				"150"
-		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
-
-		"Level"							"1"
-		"AttackAcquisitionRange"		"9999"
-		"StatusHealthRegen"				"0"
-		"StatusManaRegen"				"0"
-		"BountyXP"						"0"
-		"BountyGoldMin"					"0"
-		"BountyGoldMax"					"0"
-		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"					"330"
-		"MovementTurnRate"				"1.0"
-		"FollowRange"					"9999"
-		"TeamName"						"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_HERO"
-		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		"VisionDaytimeRange"			"8000"
-		"VisionNighttimeRange"			"8000"
-	}
-
-	"npc_megacreep_melee"
-	{
-    	"vscripts"						"ai/npc_megacreep_melee.lua"
-		"BaseClass"						"npc_dota_creature"
-		"Model"							"models/creeps/lane_creeps/creep_bad_melee/creep_bad_melee_mega.vmdl"
+		"Model"							"models/creeps/ice_biome/frostbitten/n_creep_frostbitten_shaman01.vmdl"
 		"SoundSet"						"Creep_Bad_Melee"
 		"ModelScale"					"2"
 
-		"Ability1"						"npc_megacreep_melee_jump"
+		"Ability1"						"npc_difficulty"
 
 		"ArmorPhysical"					"1"
 		"MagicalResistance"				"0"
-		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
-		"AttackDamageMin"				"100"
-		"AttackDamageMax"				"150"
-		"AttackRate"					"1.25"
-		"AttackAnimationPoint"			"0.5"
-		"AttackRange"					"250"
-		"StatusHealth"					"6500"
-		"StatusMana"					"300"
-		"RingRadius"					"90"
-		"HealthBarOffset"				"150"
-		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
-
-		"Level"							"1"
-		"AttackAcquisitionRange"		"9999"
-		"StatusHealthRegen"				"0"
-		"StatusManaRegen"				"0"
-		"BountyXP"						"0"
-		"BountyGoldMin"					"0"
-		"BountyGoldMax"					"0"
-		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"					"330"
-		"MovementTurnRate"				"1.0"
-		"FollowRange"					"9999"
-		"TeamName"						"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_HERO"
-		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		"VisionDaytimeRange"			"8000"
-		"VisionNighttimeRange"			"8000"
-	}
-
-	"npc_megacreep_ranged"
-	{
-    	"vscripts"						"ai/npc_megacreep_ranged.lua"
-		"BaseClass"						"npc_dota_creature"
-		"Model"							"models/creeps/lane_creeps/creep_bad_ranged/creep_bad_ranged_mega_crystal.vmdl"
-		"SoundSet"						"Creep_Bad_Melee"
-		"ModelScale"					"1.7"
-
-		"Ability1"						"npc_megacreep_ranged_crystal"
-
-		"ArmorPhysical"					"2"
-		"MagicalResistance"				"0"
 		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"				"100"
-		"AttackDamageMax"				"150"
-		"AttackRate"					"1.25"
-		"AttackAnimationPoint"			"0.5"
-		"AttackRange"					"350"
-		"ProjectileModel"				"particles/econ/items/leshrac/leshrac_tormented_staff/leshrac_base_attack_tormented.vpcf"
-		"ProjectileSpeed"				"900"
-		"StatusHealth"					"7000"
-		"StatusMana"					"600"
-		"RingRadius"					"90"
-		"HealthBarOffset"				"150"
-		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
-
-		"Level"							"1"
-		"AttackAcquisitionRange"		"9999"
-		"StatusHealthRegen"				"0"
-		"StatusManaRegen"				"0"
-		"BountyXP"						"0"
-		"BountyGoldMin"					"0"
-		"BountyGoldMax"					"0"
-		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"					"330"
-		"MovementTurnRate"				"1.0"
-		"FollowRange"					"9999"
-		"TeamName"						"DOTA_TEAM_BADGUYS"
-		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_HERO"
-		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_HERO"
-		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
-		"VisionDaytimeRange"			"8000"
-		"VisionNighttimeRange"			"8000"
-	}
-
-	"npc_boss_luna"
-	{
-    	//"vscripts"						"ai/npc_megacreep_ranged.lua"
-		"BaseClass"						"npc_dota_creature"
-		"Model"							"models/heroes/luna/luna.vmdl"
-		"SoundSet"						"Hero_Luna"
-		"ModelScale"					"1.5"
-		"precache"
-		{
-			"model"				"models/heroes/luna/luna.vmdl"
-			"particle"			"particles/econ/items/luna/luna_ti9_weapon/luna_ti9_weapon_ambient.vpcf"
-			"particle"			"particles/econ/items/luna/luna_lucent_ti5/luna_shield_ambient_moonfall.vpcf"
-			"particle"			"particles/econ/items/luna/luna_fall20/luna_fall20_head.vpcf"
-			"particle"			"particles/econ/items/luna/luna_fall20/luna_fall20_shoulders.vpcf"
-			"particle"			"particles/econ/items/luna/luna_fall20/luna_fall20_mount.vpcf"
-		}
-
-		"Ability1"						"npc_boss_luna_glaive"
-		"Ability2"						"npc_boss_luna_passive_beam"
-		"Ability3"						"npc_boss_luna_night_blessing"
-
-		"ArmorPhysical"					"3"
-		"MagicalResistance"				"0"
-		"AttackCapabilities"			"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"				"75"
-		"AttackDamageMax"				"100"
+		"ProjectileModel"				"particles/neutral_fx/ghost_frost_attack.vpcf"
+		"ProjectileSpeed"				"600"
+		"AttackDamageMin"				"30"
+		"AttackDamageMax"				"30"
 		"AttackRate"					"1.5"
-		"AttackAnimationPoint"			"0.3"
-		"AttackRange"					"550"
-		"ProjectileModel"				"particles/econ/items/luna/luna_ti9_weapon/luna_ti9_base_attack.vpcf"
-		"ProjectileSpeed"				"900"
-		"StatusHealth"					"10000"
-		"StatusMana"					"600"
-		"RingRadius"					"150"
-		"HealthBarOffset"				"250"
+		"AttackAnimationPoint"			"0.5"
+		"AttackRange"					"500"
+		"StatusHealth"					"600"
+		"StatusMana"					"300"
+		"RingRadius"					"120"
+		"HealthBarOffset"				"150"
 		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
 
 		"Level"							"1"
@@ -221,7 +79,7 @@
 		"BountyGoldMin"					"0"
 		"BountyGoldMax"					"0"
 		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
-		"MovementSpeed"					"330"
+		"MovementSpeed"					"260"
 		"MovementTurnRate"				"1.0"
 		"FollowRange"					"9999"
 		"TeamName"						"DOTA_TEAM_BADGUYS"
@@ -230,40 +88,49 @@
 		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
 		"VisionDaytimeRange"			"8000"
 		"VisionNighttimeRange"			"8000"
-		"Creature"
-		{
-			"AttachWearables"
-			{
-				"Wearable1"
-				{
-					"ItemDef"           "13000" // weapon
-					// particles/econ/items/luna/luna_ti9_weapon/luna_ti9_weapon_ambient.vpcf
-				}
-				"Wearable2"
-				{
-					"ItemDef"           "8301" // offhand
-					// particles/econ/items/luna/luna_lucent_ti5/luna_shield_ambient_moonfall.vpcf
-				}
-				"Wearable3"
-				{
-					"ItemDef"           "12552" // head
-					// particles/econ/items/luna/luna_fall20/luna_fall20_head.vpcf
-				}
-				"Wearable4"
-				{
-					"ItemDef"           "12554" // shoulder
-					// particles/econ/items/luna/luna_fall20/luna_fall20_shoulders.vpcf
-				}
-				"Wearable5"
-				{
-					"ItemDef"           "12551" // mount
-					// particles/econ/items/luna/luna_fall20/luna_fall20_mount.vpcf
-				}
-				"Wearable6"
-				{
-					"ItemDef"           "453" // body_head
-				}
-			}
-		}
 	}
+	
+	"npc_frost_wolf"
+	{
+		"BaseClass"						"npc_dota_creature"
+		"Model"							"models/items/lycan/ultimate/frostivus2018_lycan_winter_snow_wolf_shapeshift/frostivus2018_lycan_winter_snow_wolf_shapeshift.vmdl"
+		"SoundSet"						"Creep_Bad_Melee"
+		"ModelScale"					"0.8"
+
+		"Ability1"						"npc_difficulty"
+		"Ability2"						"npc_frost_wolf_attack"
+
+		"ArmorPhysical"					"0"
+		"MagicalResistance"				"0"
+		"AttackCapabilities"			"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"				"15"
+		"AttackDamageMax"				"15"
+		"AttackRate"					"1.3"
+		"AttackAnimationPoint"			"0.5"
+		"AttackRange"					"140"
+		"StatusHealth"					"100"
+		"StatusMana"					"0"
+		"RingRadius"					"60"
+		"HealthBarOffset"				"150"
+		"BoundsHullName"				"DOTA_HULL_SIZE_HERO"
+
+		"Level"							"1"
+		"AttackAcquisitionRange"		"9999"
+		"StatusHealthRegen"				"0"
+		"StatusManaRegen"				"0"
+		"BountyXP"						"0"
+		"BountyGoldMin"					"0"
+		"BountyGoldMax"					"0"
+		"MovementCapabilities"			"DOTA_UNIT_CAP_MOVE_GROUND"
+		"MovementSpeed"					"400"
+		"MovementTurnRate"				"1.0"
+		"FollowRange"					"9999"
+		"TeamName"						"DOTA_TEAM_BADGUYS"
+		"CombatClassAttack"				"DOTA_COMBAT_CLASS_ATTACK_HERO"
+		"CombatClassDefend"				"DOTA_COMBAT_CLASS_DEFEND_HERO"
+		"UnitRelationshipClass"			"DOTA_NPC_UNIT_RELATIONSHIP_TYPE_DEFAULT"
+		"VisionDaytimeRange"			"8000"
+		"VisionNighttimeRange"			"8000"
+	}
+
 }

@@ -123,6 +123,15 @@ end
 function GameMode:InitGame()
 	if TEST_HEROES then
 		require("test_heroes")
+
+		HEROES_QNT = DEBUG_QNT_HEROES
+
+		--LinkLuaModifier( "modifier_npc_stun_casting", "ability/modifier_npc_stun_casting.lua", LUA_MODIFIER_MOTION_NONE )
+		--LinkLuaModifier( "modifier_hero_stunned", "ability/modifier_hero_stunned.lua", LUA_MODIFIER_MOTION_NONE )
+		--GameRules:SetTimeOfDay(0.26) -- day: 0.26 | night: 0.76
+		--local spawnerVector = Entities:FindByName(nil, "spawner_center"):GetAbsOrigin()
+		--local boss = CreateUnitByName("npc_boss_luna", spawnerVector, true, nil, nil, DOTA_TEAM_BADGUYS)
+		
 	else
 		for nPlayerID = 0, DOTA_MAX_TEAM_PLAYERS-1 do
 			if PlayerResource:GetTeam( nPlayerID ) == DOTA_TEAM_GOODGUYS and PlayerResource:HasSelectedHero( nPlayerID ) then
@@ -130,17 +139,11 @@ function GameMode:InitGame()
 				table.insert(HEROES, hero)
 			end
 		end
+
+		HEROES_QNT = #HEROES
 	end
-
-	LinkLuaModifier( "modifier_npc_stun_casting", "ability/modifier_npc_stun_casting.lua", LUA_MODIFIER_MOTION_NONE )
-	LinkLuaModifier( "modifier_hero_stunned", "ability/modifier_hero_stunned.lua", LUA_MODIFIER_MOTION_NONE )
-
-	GameRules:SetTimeOfDay(0.26) -- day: 0.26 | night: 0.76
-
-	if TEST_HEROES then
-		local spawnerVector = Entities:FindByName(nil, "spawner_center"):GetAbsOrigin()
-		local boss = CreateUnitByName("npc_boss_luna", spawnerVector, true, nil, nil, DOTA_TEAM_BADGUYS)
-	else
-		RoundController:Init()
-	end
+	
+	GameRules.DIFFICULTY_HEALTH = 100 * (HEROES_QNT - 1)
+	GameRules.DIFFICULTY_DAMAGE = 0.35 * (HEROES_QNT - 1)
+	RoundController:Init()
 end

@@ -8,7 +8,7 @@ function RoundController:Init()
 	self.roundLastIndex = #self.roundData
 	self.spawnerVector = Entities:FindByName(nil, "spawner_center"):GetCenter()
 	self.event = ListenToGameEvent( "entity_killed", Dynamic_Wrap( RoundController, "OnEntityKilled" ), self )
-	self.nextRoundNameTime = GameRules:GetGameTime() + 3
+	self.nextRoundNameTime = GameRules:GetGameTime() + 1
 	self.nextRoundStartTime = 0
 	GameRules:GetGameModeEntity():SetThink( "OnThink", self, 1 )
 end

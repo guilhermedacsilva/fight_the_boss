@@ -14,6 +14,11 @@ function GameMode:_InitGameMode()
   GameRules:SetPreGameTime( PRE_GAME_TIME)
   GameRules:SetPostGameTime( POST_GAME_TIME )
   GameRules:SetTreeRegrowTime( TREE_REGROW_TIME )
+  -- EU PEGUEI DA NET
+  GameRules:SetCustomGameSetupTimeout( 0 ) 
+	GameRules:SetCustomGameSetupAutoLaunchDelay( 0 )
+	GameRules:SetShowcaseTime( 0 )
+
   --GameRules:SetUseCustomHeroXPValues ( USE_CUSTOM_XP_VALUES )
   --GameRules:SetGoldPerTick(GOLD_PER_TICK)
   --GameRules:SetGoldTickTime(GOLD_TICK_TIME)

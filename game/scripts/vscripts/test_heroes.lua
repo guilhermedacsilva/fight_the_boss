@@ -1,4 +1,7 @@
 HEROES = {}
+INITIAL_ROUND = 2
+DEBUG_QNT_HEROES = 1
+
 local hPlayer = PlayerResource:GetPlayer(0)
 local heroItems = {}
 local heroAbilities = {}
@@ -8,13 +11,17 @@ hero = CreateHeroForPlayer("npc_dota_hero_omniknight", hPlayer)
 HEROES["0"] = hero
 heroAbilities["0"] = {0,2,0,2}
 
-hero = CreateHeroForPlayer("npc_dota_hero_windrunner", hPlayer)
-HEROES["1"] = hero
-heroAbilities["1"] = {0,1,0,1}
+if DEBUG_QNT_HEROES >= 2 then
+    hero = CreateHeroForPlayer("npc_dota_hero_windrunner", hPlayer)
+    HEROES["1"] = hero
+    heroAbilities["1"] = {0,1,0,1}
+end
 
-hero = CreateHeroForPlayer("npc_dota_hero_brewmaster", hPlayer)
-HEROES["2"] = hero
-heroAbilities["2"] = {0,1,0,1}
+if DEBUG_QNT_HEROES >= 3 then
+    hero = CreateHeroForPlayer("npc_dota_hero_brewmaster", hPlayer)
+    HEROES["2"] = hero
+    heroAbilities["2"] = {0,1,0,1}
+end
 
 for heroKey, hero in pairs(HEROES) do
     hero:SetControllableByPlayer(0, true)
@@ -34,5 +41,6 @@ for heroKey, hero in pairs(HEROES) do
 end
 
 hero = PlayerResource:GetSelectedHeroEntity( 0 )
+--hero = PlayerResource:GetAssignedHero()
 DEBUG_REAL_HERO = hero
-hero:ForceKill(false)
+--hero:ForceKill(false)
